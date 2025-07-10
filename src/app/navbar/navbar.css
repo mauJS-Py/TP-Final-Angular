@@ -48,8 +48,9 @@
 }
 
 .desplegable {
-    position:absolute;
-    top: 100%; right: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
     width: fit-content;
     min-width: 200px;
     z-index: 100;
@@ -162,6 +163,9 @@
     }
     .menu-min-768 {
         display: none;
+    }
+    .navbar {
+        padding-right: 14px;
     }
 }
 
