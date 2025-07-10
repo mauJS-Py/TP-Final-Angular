@@ -3,10 +3,6 @@
     font-size: 34px;
 }
 
-.barra_separadora {
-    color:#3b63ad;
-}
-
 .bi-x:hover,
 .bi-list:hover,
 .icono_usuario:hover,
@@ -19,8 +15,6 @@
 .icono_usuario_footer:active {
     color: #6b9cf7;
 }
-
-
 
 .boton_colapsar {
     width: fit-content;
@@ -54,6 +48,7 @@
     min-width: 200px;
     z-index: 100;
     background-color: #325598;
+    border-top: 1px solid #3b63ad;
     border-bottom-left-radius: 8px;
     box-shadow: 0 0 22px #325598;
     padding-bottom: 7px;
@@ -141,6 +136,7 @@
     flex-wrap: wrap;
     overflow-y: auto;
     background-color: #325598;
+    border-top: 1px solid #3b63ad;
     padding: 0 15px;
 }
 

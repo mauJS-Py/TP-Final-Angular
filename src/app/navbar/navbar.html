@@ -28,7 +28,6 @@
         <nav class="container">
             <div class="row">
                 <ul id="desplegable" class="menu-max-767 desplegable">
-                    <hr class="barra_separadora">
                     @for (item of menuItems; track item.route) {
                         <a routerLink="{{item.route}}" class="links_navbar_collapse" (click)="collapseMenu()"><li class="list_format">{{item.label}}</li></a>
                     }
@@ -39,7 +38,6 @@
 </div>
 
 <div class="container fixed-bottom width menu-max-767">
-    <hr class="barra_separadora">
     <nav class="navbar width">
         <div class="row menu_footer centrar">
             <div>
