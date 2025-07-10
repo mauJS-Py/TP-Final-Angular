@@ -1,6 +1,5 @@
-.am {
-    font-family: 'Segoe Print', sans-serif;
-    font-size: 34px;
+.am_marmol_logo {
+    height: 58px;
 }
 
 .bi-x:hover,
@@ -28,6 +27,12 @@
     width: 45%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.caja_logo {
+    display: flex;
+    align-items: center;
 }
 
 .caja_navbar {
@@ -109,7 +114,7 @@
 }
 
 .links_texto {
-    align-self: flex-end;
+    align-self: center;
 }
 
 .list_format {
@@ -119,13 +124,6 @@
 
 .list_format:hover, .list_format:active {
     background-color: #4776ce;
-}
-
-.logo {
-    color: #FFFFFF;
-    font-family: Microsoft PhagsPa, sans-serif;
-    font-size: 30px;
-    font-weight: 600;
 }
 
 .menu_footer {
@@ -138,6 +136,7 @@
     background-color: #325598;
     border-top: 1px solid #3b63ad;
     padding: 0 15px;
+    padding-right: 23px;
 }
 
 .icono_derecha {
@@ -157,12 +156,8 @@
 }
 
 @media screen and (max-width: 767px) {
-    .am {
-        font-size: 30px;
-    }
-    .logo {
-        font-size: 27px;
-        font-weight: 600;
+    .am_marmol_logo {
+        height: 50px;
     }
     .menu-min-768 {
         display: none;

@@ -1,22 +1,31 @@
-.texto_usuarios {
+.caja_logo_secciones {
+    position: relative;
+}
+
+.img_logo_secciones {
+    height: 80px;
+}
+
+.texto_logo_secciones {
+    position: absolute;
+    bottom: 8px;
+    right: 24px;
     width: 100%;
     display: inline-block;
     text-align: right;
     line-height:100%;
     color: #6681b3;
+    font-size: 16px;
     font-weight: 700;
 }
 
-.titulo_logo {
-    width: fit-content;
-    line-height:100%;
-    font-family: Microsoft PhagsPa, sans-serif;
-    font-size: 41px;
-    font-weight: 600;
-}
-
-.titulo_logo_solo_am {
-    color: #325598;
-    font-family: 'Segoe Print', sans-serif;
-    font-size: 44px;
+@media screen and (max-width: 300px) {
+    .img_logo_secciones {
+        height: 65px;
+    }
+    .texto_logo_secciones {
+        bottom: 8px;
+        right: 20px;
+        font-size: 14px;
+    }
 }
