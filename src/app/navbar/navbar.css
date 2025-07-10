@@ -173,6 +173,9 @@
     .boton_colapsar {
         font-size: 32px;
     }
+    .links_navbar_collapse {
+        font-size: 20px;
+    }
 }
 
 
