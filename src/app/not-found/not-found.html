@@ -1,0 +1,17 @@
+<div class="container p-t-100">
+    <div class="row caja_notfound">
+            <div class="titulos_juntos">
+                <h1 class='titulo_logo'><span class='titulo_logo_solo_am'>am</span>-Mármol</h1>
+                @if (elemento_no_encontrado === 'producto') {
+                    <span class="texto_notfound"><i class="bi bi-exclamation-diamond-fill"></i> PRODUCTO NO ENCONTRADO</span>
+                }
+                @else
+                {
+                    <span class="texto_notfound"><i class="bi bi-question-diamond-fill"></i> PÁGINA NO ENCONTRADA</span>
+                }
+            </div>
+            <div class="width caja_link_home">
+                <a routerLink="" class="link_home"><i class="bi bi-house"></i></a>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,131 @@
+<div class="container p-t-100">
+    <div class="row caja_login">
+        <div class="row cajas_login">
+            <div class="width caja_titulo">
+                <div class="titulos_juntos">
+                    <app-logo-am-marmol-section [section]="'Usuarios'" />
+                </div>
+            </div>
+            <div class="caja_registrarse_login width">
+                <h3 class='subtitulo_usuarios'></h3>
+                <div class="subcaja_registrarse_login">
+                    <div>
+                        <div class='cajas_registrarse_login'>
+                            <span class="inicia_sesion">Iniciá sesión</span>
+                        </div>
+                        <div class='cajas_registrarse_login'>
+                            <span>O <a routerLink="/registro" class='registrate'>REGISTRATE</a> si no tenés usuario</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cajas_login">
+            <div class="container">
+                <div class="row">
+                    <div class="width caja_inicio_sesion">
+                        <div class='caja_formulario' (click)="ocultarMensajeError()">
+                            <form class='formulario_sesion' #loginForm="ngForm" (submit)="intentarSesion(loginForm)">
+                                <div class="width">
+                                    <label class='label_sesion texto_izquierda' for="user">Usuario</label>
+                                    <input
+                                        id='user'
+                                        class='input_sesion'
+                                        type="text"
+                                        required
+                                        minlength="8"
+                                        maxlength="16"
+                                        name='user'
+                                        placeholder='Nombre de usuario'
+                                        [(ngModel)]="form_state_login.user"
+                                        #user="ngModel"
+                                    >
+                                </div>
+                                <div class="width">
+                                    <label class='label_sesion texto_izquierda' for="password">Contraseña</label>
+                                    <div class="input_password">
+                                        <input
+                                            id='password'
+                                            class='input_sesion_password'
+                                            [type]="hidden_pass ? 'password' : 'text'"
+                                            required
+                                            minlength="8"
+                                            maxlength="16"
+                                            pattern="^(?=.*[A-Z])(?=.*\d).+$"
+                                            name='password'
+                                            placeholder='********'
+                                            [(ngModel)]="form_state_login.password"
+                                            #password="ngModel"
+                                        >
+                                        @if (hidden_pass) {
+                                            <i class="bi bi-eye password_icon" (click)="hiddenPass()"></i>
+                                        } @else {
+                                            <i class="bi bi-eye-slash password_icon" (click)="hiddenPass()"></i>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="width recuperar_password">
+                                    @if (!pass_recuperada) {
+                                        <a class="recuperar_password_texto" (click)="recuperarPass()">
+                                            ¿Olvidaste tu contraseña?
+                                        </a>
+                                    } @else {
+                                        <span class="recuperar_password_texto_rec">
+                                            E-mail de recuperación enviado
+                                        </span>
+                                    }
+                                </div>
+                                <div>
+                                    <input class='boton_sesion' type="submit" value="Ingresar">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row caja_login_mensajes_validacion">
+        <div class="row cajas_login min_768">
+            <span>&nbsp;</span>
+        </div>
+        <div class="row cajas_login centrar_mensajes_validacion">
+            <div class="width">
+                @if((user.dirty || user.touched) && user.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El usuario debe contener entre 8 y 16 caracteres
+                        </span>
+                    </div>
+                }
+                @if((password.dirty || password.touched) && password.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            La contraseña debe contener entre 8 y 16 caracteres, al menos una letra mayúscula y un número
+                        </span>
+                    </div>
+                }
+                @if (formularioIncorrecto && formErrorMessage) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion_ingreso_incorrecto">
+                            Ingreso incorrecto. Por favor, intentalo nuevamente
+                        </span>
+                    </div>      
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

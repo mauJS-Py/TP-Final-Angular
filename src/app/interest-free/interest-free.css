@@ -1,0 +1,14 @@
+.cuotas_sin_interes {
+    width: fit-content;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    font-weight: 600;
+    background-color: #91ff00;
+    padding: 2px 4px;
+    border-radius: 8px;
+    color: #000000;
+    z-index: 10;
+}

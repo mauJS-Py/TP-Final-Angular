@@ -1,0 +1,11 @@
+.oferta_mostrar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: 600;
+    background-color: #f12222;
+    padding: 2px 4px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    z-index: 10;
+}

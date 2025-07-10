@@ -1,0 +1,22 @@
+.texto_usuarios {
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    line-height:100%;
+    color: #6681b3;
+    font-weight: 700;
+}
+
+.titulo_logo {
+    width: fit-content;
+    line-height:100%;
+    font-family: Microsoft PhagsPa, sans-serif;
+    font-size: 41px;
+    font-weight: 600;
+}
+
+.titulo_logo_solo_am {
+    color: #325598;
+    font-family: 'Segoe Print', sans-serif;
+    font-size: 44px;
+}

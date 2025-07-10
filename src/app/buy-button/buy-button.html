@@ -1,0 +1,13 @@
+<div class="width">
+    @if (!bought_product) {
+        <button class="boton_comprar width" type="button" (click)="buyProduct()">Comprar</button>
+    } @else {
+        <button class="boton_comprar disabled_button width" type="button">¡Comprada!</button>
+        <div class="caja_compra">
+            <span class="compra_realizada">
+                ¡Gracias por tu compra!
+            </span>
+        </div>
+    }
+</div>
+

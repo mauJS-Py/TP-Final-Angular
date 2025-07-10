@@ -1,0 +1,18 @@
+<div>
+    @if (!dolares) {
+        <span class="price"> $ {{ precioConOferta(precio, oferta) }}
+            @if (oferta > 0) {
+                <span class="old_price">$ {{ precio }}</span>
+            }
+        </span>
+        <span class="precio_cuotas"> {{ cuotas }} cuotas de $ {{ redondeoCuotas(precio, oferta, cuotas, porcentaje_recargo_cuotas) }}</span>
+    }
+    @else {
+        <span class="price"> USD {{ precioConOferta(precio, oferta) }}
+            @if (oferta > 0) {
+                <span class="old_price">USD {{ precio }}</span>
+            }
+        </span>
+        <span class="precio_cuotas"> {{ cuotas }} cuotas de USD {{ redondeoCuotas(precio, oferta, cuotas, porcentaje_recargo_cuotas) }}</span>
+    }
+</div>

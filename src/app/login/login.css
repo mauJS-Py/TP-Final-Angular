@@ -1,0 +1,254 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.width {
+    flex: 0 0 auto;
+    width: 100%; 
+}
+
+
+
+
+.boton_sesion {
+    width: 100%;
+    background-color: #325598;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px;
+    border: 0;
+    margin-top: 20px;
+}
+
+.boton_sesion:hover, .boton_sesion:active {
+    background-color: #4776ce;
+}
+
+.caja_formulario {
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.caja_inicio_sesion {
+    display: flex;
+    justify-content: center;
+}
+
+.caja_login, .caja_login_mensajes_validacion {
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 6%;
+}
+
+.caja_login {
+    justify-content: center;
+}
+
+.caja_login_mensajes_validacion {
+    justify-content: start;
+    padding: 0 2%;
+    margin-top: 0;
+}
+
+.caja_mensaje_validacion {
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.caja_registrarse_login {
+    margin-bottom: 20px;
+}
+
+.caja_titulo {
+    margin-top: 10%;
+}
+
+.cajas_login {
+    width: 50%;
+    flex: 0 0 auto;
+    align-items: flex-start;
+}
+
+.cajas_registrarse_login {
+    width: 100%;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 15px;
+}
+
+.formulario_sesion {
+    padding: 15px;
+}
+
+.input_password {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+}
+
+.inicia_sesion {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.input_sesion, .input_sesion_password {
+    border: 2px solid #c9c9c9;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.input_sesion_password {
+    margin-bottom: 0;
+}
+
+.input_sesion:focus, .input_sesion_password:focus {
+    border-color: #325598;
+    outline-color: #325598;
+}
+
+.label_sesion {
+    color: #262B4D;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.mensaje_validacion, .mensaje_validacion_ingreso_incorrecto {
+    color: #325598;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.mensaje_validacion_ingreso_incorrecto {
+    color: #f12222;
+}
+
+.p-t-100 {
+    padding-top: 100px;    
+}
+
+.password_icon {
+    position: absolute;
+    right: 6px;
+    cursor: pointer;
+}
+
+.password_icon:hover, .password_icon:active {
+    color: #325598;
+}
+
+.recuperar_password {
+    padding: 0 5px;
+    text-align: right;
+}
+
+.recuperar_password_texto, .recuperar_password_texto_rec {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #325598;
+}
+
+.recuperar_password_texto_rec {
+    cursor: auto;
+}
+
+.registrate {
+    text-decoration: none;
+    color: #325598;
+    font-weight: 700;
+}
+
+.subcaja_registrarse_login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.subtitulo_usuarios {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.titulos_juntos {
+    width: fit-content;
+}
+
+
+@media screen and (max-width:767px) {
+    .caja_login {
+        margin-right: 20%;
+        margin-left: 20%;
+        margin-top: 0;
+    }
+
+    .caja_login_mensajes_validacion {
+        margin-right: auto;
+        margin-left: auto;
+        width: 60%;
+    }
+
+    .caja_titulo {
+        margin-top: 0;
+    }
+
+    .cajas_login {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+    .cajas_registrarse_login {
+        font-size: 15px;
+        text-align: right;
+    }
+
+    .centrar_mensajes_validacion {
+        justify-content: center;
+    }
+
+    .min_768 {
+        display: none;
+    }
+
+    .subcaja_registrarse_login {
+        display: inherit;
+        flex-wrap: inherit;
+        justify-content: inherit;
+    }
+    
+    .titulos_juntos {
+        margin-bottom: 6%;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .caja_login {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
+    .caja_login_mensajes_validacion {
+        width: 98%;
+    }
+
+    .cajas_login {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+}
+

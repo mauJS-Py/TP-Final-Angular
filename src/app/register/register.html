@@ -1,0 +1,230 @@
+<div class="container p-t">
+    <div class="row caja_register">
+        <div class="row cajas_register">
+            <div class="width caja_titulo">
+                <div class="titulos_juntos">
+                    <div class="titulos_juntos">
+                        <app-logo-am-marmol-section [section]="'Registro'" />
+                    </div>
+                </div>
+            </div>
+            <div class="caja_registrarse_register width">
+                <div class="subcaja_registrarse_register">
+                    <div>
+                        <div class='cajas_registrarse_register'>
+                            <span class="registro_usuarios">Registro de usuarios</span>
+                        </div>
+                        <div class='cajas_registrarse_register'>
+                            <span class="registro_usuarios registro_usuarios_requeridos">Campos requeridos (*)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cajas_register">
+            <div class="container">
+                <div class="row">
+                    <div class="width caja_registro_usuario">
+                        <div class='caja_formulario' (click)="ocultarMensajeError()">
+                            <form class='row formulario_registro' #registerForm="ngForm" (submit)="registrarse(registerForm)">
+                                <div class="width">
+                                    <label class='label_registro texto_izquierda' for="username">Nombre de usuario (*)</label>
+                                    <input
+                                        id='username'
+                                        class='input_sesion'
+                                        type="text"
+                                        required
+                                        minlength="8"
+                                        maxlength="16"
+                                        name='username'
+                                        placeholder='Ej. ammarmoluser'
+                                        [(ngModel)]="form_state_register.username"
+                                        #username="ngModel"
+                                    >
+                                </div>
+                                <div class="etiqueta_w50_pr">
+                                    <label class='label_registro texto_izquierda' for="name">Nombre/s (*)</label>
+                                    <input
+                                        id='name'
+                                        class='input_sesion'
+                                        type="text"
+                                        required
+                                        minlength="3"
+                                        maxlength="30"
+                                        name='name'
+                                        placeholder='Ej. John'
+                                        [(ngModel)]="form_state_register.name"
+                                        #name="ngModel"
+                                    >
+                                </div>
+                                <div class="etiqueta_w50_pl">
+                                    <label class='label_registro texto_izquierda' for="surname">Apellido/s (*)</label>
+                                    <input
+                                        id='surname'
+                                        class='input_sesion'
+                                        type="text"
+                                        required
+                                        minlength="3"
+                                        maxlength="30"
+                                        name='surname'
+                                        placeholder='Ej. Doe'
+                                        [(ngModel)]="form_state_register.surname"
+                                        #surname="ngModel"
+                                    >
+                                </div>
+                                <div class="width">
+                                    <label class='label_registro texto_izquierda' for="phone">Teléfono</label>
+                                    <input
+                                        id='phone'
+                                        class='input_sesion'
+                                        type="text"
+                                        minlength="8"
+                                        maxlength="20"
+                                        name='phone'
+                                        placeholder='Ej. 15-1111-2222'
+                                        [(ngModel)]="form_state_register.phone"
+                                        #phone="ngModel"
+                                    >
+                                </div>
+                                <div class="width">
+                                    <label class='label_registro texto_izquierda' for="email">E-mail (*)</label>
+                                    <input
+                                        id='email'
+                                        class='input_sesion'
+                                        type="email"
+                                        required
+                                        minlength="6"
+                                        maxlength="200"
+                                        pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                                        name='email'
+                                        placeholder='Ej. johndoe@mail.com'
+                                        [(ngModel)]="form_state_register.email"
+                                        #email="ngModel"
+                                    >
+                                </div>
+
+                                <div class="width">
+                                    <label class='label_registro texto_izquierda' for="password">Contraseña (*)</label>
+                                    <div class="input_password">
+                                        <input
+                                            id='password'
+                                            class='input_sesion_password'
+                                            [type]="hidden_pass ? 'password' : 'text'"
+                                            required
+                                            minlength="8"
+                                            maxlength="16"
+                                            pattern="^(?=.*[A-Z])(?=.*\d).+$"
+                                            name='password'
+                                            placeholder='********'
+                                            [(ngModel)]="form_state_register.password"
+                                            #password="ngModel"
+                                        >
+                                        @if (hidden_pass) {
+                                            <i class="bi bi-eye password_icon" (click)="hiddenPass()"></i>
+                                        } @else {
+                                            <i class="bi bi-eye-slash password_icon" (click)="hiddenPass()"></i>
+                                        }
+                                    </div>
+
+                                </div>
+                                <div class="width">
+                                    <label class='label_registro texto_izquierda' for="passwordrepeat">Repetir contraseña (*)</label>
+                                    <div class="input_password">
+                                        <input
+                                            id='passwordrepeat'
+                                            class='input_sesion_password'
+                                            [type]="hidden_pass_repeat ? 'password' : 'text'"
+                                            required
+                                            maxlength="16"
+                                            name='passwordrepeat'
+                                            placeholder='********'
+                                            [(ngModel)]="form_state_register.passwordrepeat"
+                                            #passwordrepeat="ngModel"
+                                            (keyup)="repetirPassword()"
+                                        >
+                                        @if (hidden_pass_repeat) {
+                                            <i class="bi bi-eye password_icon" (click)="hiddenPassRepeat()"></i>
+                                        } @else {
+                                            <i class="bi bi-eye-slash password_icon" (click)="hiddenPassRepeat()"></i>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="width">
+                                    <input class='boton_registro' type="submit" value="Registrarse">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row caja_register_mensajes_validacion">
+        <div class="row cajas_register min_768">
+            <span>&nbsp;</span>
+        </div>
+        <div class="row cajas_register centrar_mensajes_validacion">
+            <div class="width">
+                @if((username.dirty || username.touched) && username.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El nombre de usuario debe contener entre 8 y 16 caracteres
+                        </span>
+                    </div>
+                }
+                @if((name.dirty || name.touched) && name.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El nombre debe contener entre 3 y 30 caracteres
+                        </span>
+                    </div>
+                }
+                @if((surname.dirty || surname.touched) && surname.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El apellido debe contener entre 3 y 30 caracteres
+                        </span>
+                    </div>
+                }
+                @if((phone.dirty || phone.touched) && phone.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El número telefónico debe contener entre 8 y 20 caracteres
+                        </span>
+                    </div>
+                }
+                @if((email.dirty || email.touched) && email.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El e-mail debe contener entre 6 y 200 caracteres y pertenecer a un dominio
+                        </span>
+                    </div>
+                }
+                @if((password.dirty || password.touched) && password.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            La contraseña debe contener entre 8 y 16 caracteres, al menos una letra mayúscula y un número
+                        </span>
+                    </div>
+                }
+                @if((passwordrepeat.dirty || passwordrepeat.touched) && (passwordrepeat.invalid || !repeated_pass)) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            Ambos campos de contraseña deben coincidir
+                        </span>
+                    </div>
+                }
+                @if (formularioIncorrecto && formErrorMessage) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion_ingreso_incorrecto">
+                            Ingreso incorrecto. Por favor, intentalo nuevamente
+                        </span>
+                    </div>      
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.boton_comprar {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 110%;
+    font-weight: 600;
+    background-color: #0ea027;
+    border: 0;
+    border-radius: 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.boton_comprar:hover, .boton_comprar:active {
+    background-color: #0d701d;
+    color:#FFFFFF;
+}
+
+.caja_compra {
+    float: right;
+}
+
+.compra_realizada {
+    font-size: 90%;
+    font-weight: 700;
+    color: #ff5e00;
+}
+
+.disabled_button {
+    cursor: not-allowed;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+
+.width {
+    flex: 0 0 auto;
+    width: 100%; 
+}

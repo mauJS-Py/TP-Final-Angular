@@ -1,0 +1,48 @@
+<div class="container p-t-90">
+    <h1 class="titulo_seccion">Mesadas de mármol</h1>
+    @if (loading) {
+        <div class="width cargando">
+            <span>Cargando productos...</span>
+        </div>
+    }
+    @else {
+        <div class="row caja_cards">
+            @for(product of products; track product.id) {
+                <div class="card card_producto">
+                    <div class="caja_img">
+                        <img [src]="product.img" class="image" alt={{product.color}}>
+                        @if (product.surcharge_percentage === 0) {
+                            <div class="sin_interes">
+                                <app-interest-free />
+                            </div>
+                        }
+                        <div class="icono_favoritos" >
+                            <span (click)="favoritosOnOff(product.id)">
+                                @if (!getFavState(product.id)) {
+                                    <i class="bi bi-heart-fill"></i>
+                                }
+                                @else {
+                                    <i class="bi bi-heart-fill icono_favoritos_on"></i>
+                                }
+                            </span>
+                        </div>
+                    </div>
+                    @if (product.discount > 0) {
+                        <div class="caja_oferta">
+                            <app-show-discount [oferta]="product.discount" />
+                        </div>
+                    }
+                    <div class="card_body">
+                        <div class="precio">
+                            <h3 class="titulo_card">{{ product.measures }}cm {{ product.color }}</h3>
+                            <app-price [precio]="product.price" [oferta]="product.discount" [cuotas]="product.installments" [porcentaje_recargo_cuotas]="product.surcharge_percentage" [dolares]="product.us_dollars"/>
+                        </div>
+                        <div class="caja_boton_detalles">
+                            <a routerLink="/product_details/{{ product.id }}" class="botonlink_detalles">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

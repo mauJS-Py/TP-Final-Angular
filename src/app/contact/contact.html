@@ -1,0 +1,169 @@
+<div class="container p-t">
+    <div class="row caja_contact">
+        <div class="row cajas_contact">
+            <div class="width caja_titulo">
+                <div class="titulos_juntos">
+                    <div class="titulos_juntos">
+                        <app-logo-am-marmol-section [section]="'Contacto'" />
+                    </div>
+                </div>
+            </div>
+            <div class="caja_contacto_contact width">
+                <div class="subcaja_contacto_contact">
+                    <div>
+                        <div class='cajas_contacto_contact'>
+                            <span class="mensaje_contacto">Dejanos tu mensaje o consulta</span>
+                        </div>
+                        <div class='cajas_contacto_contact'>
+                            <span class="mensaje_contacto mensaje_contacto_requeridos">Campos requeridos (*)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cajas_contact">
+            <div class="container">
+                <div class="row">
+                    <div class="width caja_contact_contacto">
+                        <div class='caja_formulario' (click)="ocultarMensajeError()">
+                            <form class='row formulario_contacto' #contactForm="ngForm" (submit)="contactarse(contactForm)">
+                                <div class="etiqueta_w50_pr">
+                                    <label class='label_contacto texto_izquierda' for="name">Nombre/s (*)</label>
+                                    <input
+                                        id='name'
+                                        class='input_sesion'
+                                        type="text"
+                                        required
+                                        minlength="3"
+                                        maxlength="30"
+                                        name='name'
+                                        placeholder='Ej. John'
+                                        [(ngModel)]="form_state_contact.name"
+                                        #name="ngModel"
+                                    >
+                                </div>
+                                <div class="etiqueta_w50_pl">
+                                    <label class='label_contacto texto_izquierda' for="surname">Apellido/s (*)</label>
+                                    <input
+                                        id='surname'
+                                        class='input_sesion'
+                                        type="text"
+                                        required
+                                        minlength="3"
+                                        maxlength="30"
+                                        name='surname'
+                                        placeholder='Ej. Doe'
+                                        [(ngModel)]="form_state_contact.surname"
+                                        #surname="ngModel"
+                                    >
+                                </div>
+                                <div class="width">
+                                    <label class='label_contacto texto_izquierda' for="phone">Teléfono</label>
+                                    <input
+                                        id='phone'
+                                        class='input_sesion'
+                                        type="text"
+                                        minlength="8"
+                                        maxlength="20"
+                                        name='phone'
+                                        placeholder='Ej. 15-1111-2222'
+                                        [(ngModel)]="form_state_contact.phone"
+                                        #phone="ngModel"
+                                    >
+                                </div>
+                                <div class="width">
+                                    <label class='label_contacto texto_izquierda' for="email">E-mail (*)</label>
+                                    <input
+                                        id='email'
+                                        class='input_sesion'
+                                        type="email"
+                                        required
+                                        minlength="6"
+                                        maxlength="200"
+                                        pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                                        name='email'
+                                        placeholder='Ej. johndoe@mail.com'
+                                        [(ngModel)]="form_state_contact.email"
+                                        #email="ngModel"
+                                    >
+                                </div>
+                                <div class="width">
+                                    <label class='label_contacto texto_izquierda' for="text">Mensaje o consulta (*)</label>
+                                    <textarea
+                                        id='text'
+                                        class='input_sesion mensaje_textarea'
+                                        type="text"
+                                        required
+                                        minlength="20"
+                                        maxlength="800"
+                                        name='text'
+                                        placeholder='Ej. Quiero consultar...'
+                                        [(ngModel)]="form_state_contact.text"
+                                        #text="ngModel"
+                                    ></textarea>
+                                </div>
+                                <div class="width">
+                                    <input class='boton_contacto' type="submit" value="Enviar mensaje">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row caja_contact caja_contact_mensajes_validacion">
+        <div class="row cajas_contact min_768">
+            <span>&nbsp;</span>
+        </div>
+        <div class="row cajas_contact centrar_mensajes_validacion">
+            <div class="width">
+                @if((name.dirty || name.touched) && name.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El nombre debe contener entre 3 y 30 caracteres
+                        </span>
+                    </div>
+                }
+                @if((surname.dirty || surname.touched) && surname.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El apellido debe contener entre 3 y 30 caracteres
+                        </span>
+                    </div>
+                }
+                @if((phone.dirty || phone.touched) && phone.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El número telefónico debe contener entre 8 y 20 caracteres
+                        </span>
+                    </div>
+                }
+                @if((email.dirty || email.touched) && email.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El e-mail debe contener entre 6 y 200 caracteres y pertenecer a un dominio
+                        </span>
+                    </div>
+                }
+                @if((text.dirty || text.touched) && text.invalid) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion">
+                            El texto del mensaje debe contener entre 20 y 800 caracteres
+                        </span>
+                    </div>
+                }
+                @if (formularioIncorrecto && formErrorMessage) {
+                    <div class="caja_mensaje_validacion">
+                        <span class="mensaje_validacion_ingreso_incorrecto">
+                            Ingreso incorrecto. Por favor, intentalo nuevamente
+                        </span>
+                    </div>      
+                }
+            </div>
+        </div>
+    </div>
+</div>

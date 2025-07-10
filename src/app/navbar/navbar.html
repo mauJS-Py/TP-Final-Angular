@@ -1,0 +1,50 @@
+<div class="container fixed-top">
+    <nav class="navbar">
+        <div class="width caja_navbar">
+            <div>
+                <span class='logo'><span class='am'>am</span>-Mármol</span>
+            </div>
+            <div id="button_collapse" class="menu-max-767 boton_colapsar" (click)="collapseMenu()">
+                @if (!closeX) {
+                    <i class="bi bi-list"></i>
+                } @else {
+                    <i class="bi bi-x"></i>
+                }
+                
+            </div>
+            <div class="menu-min-768 caja_links_todos">
+                <div class="menu-min-768 links_texto">
+                    @for (item of menuItems; track item.route) {
+                        <a routerLink="{{item.route}}" class="links_navbar" routerLinkActive="enlace_activo" [routerLinkActiveOptions]="{ exact: true }">{{item.label}}</a>
+                    }
+                </div>
+                <div class="menu-min-768">
+                    <a routerLink="/iniciar_sesion" routerLinkActive="enlace_activo_usuario" [routerLinkActiveOptions]="{ exact: true }"><i class="bi bi-person icono_usuario"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    @if (!collapsed) {
+        <nav class="container">
+            <div class="row">
+                <ul id="desplegable" class="menu-max-767 desplegable">
+                    <hr class="barra_separadora">
+                    @for (item of menuItems; track item.route) {
+                        <a routerLink="{{item.route}}" class="links_navbar_collapse" (click)="collapseMenu()"><li class="list_format">{{item.label}}</li></a>
+                    }
+                </ul>
+            </div>
+        </nav>
+    }
+</div>
+
+<div class="container fixed-bottom width menu-max-767">
+    <hr class="barra_separadora">
+    <nav class="navbar width">
+        <div class="row menu_footer centrar">
+            <div>
+                <a routerLink="/iniciar_sesion" class="icono_usuario_footer"><i class="bi bi-person"></i></a>
+            </div>
+        </div>
+    </nav>
+</div>

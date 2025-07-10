@@ -1,0 +1,193 @@
+
+
+@if (loading) {
+    <div class="container p-t-100">
+        <div class="row caja_producto">
+            <div class="width cargando">
+                <span>Cargando producto...</span>
+            </div>
+        </div>
+    </div>
+}
+@else {
+    @if (product_selected) {
+        <div class="container p-t-100">
+            <nav class="breadcrumb">
+                <ol>
+                    <li class="breadcrumb_item">
+                        <a class="breadcrumb_link" routerLink="/">
+                            Home
+                        </a>
+                    </li>
+                    <span class="breadcrumb_slash">
+                        /
+                    </span>
+                    <li class="breadcrumb_item">
+                        Mesada en {{product_selected.color }}
+                    </li>
+                </ol>
+            </nav>
+            <div class="row caja_producto">
+                    <div class="cajas_producto caja_img">
+                        <img src={{product_selected.img}} class="image" alt="">
+                        @if (product_selected.discount > 0) {
+                            <div class="caja_oferta">
+                                <app-show-discount [oferta]="product_selected.discount" />
+                            </div>
+                        }
+                        @if (product_selected.surcharge_percentage === 0) {
+                            <div class="sin_interes_pd">
+                                <app-interest-free />
+                            </div>
+                        }
+                </div>
+                <div class="cajas_producto">
+                    <div class="row">
+                        <h3 class="width titulo_producto">Mesada de {{ product_selected.measures }}cm </h3>
+                    </div>
+
+                    <div class="row caja_precio_pileta">
+                        <div class="cajas_precio">
+                            @if (pileta_simple) {
+                                <app-price [precio]="product_selected.price" [oferta]="product_selected.discount" [cuotas]="product_selected.installments" [porcentaje_recargo_cuotas]="product_selected.surcharge_percentage" [dolares]="product_selected.us_dollars" />
+                            }
+                            @else {
+                                @if (!product_selected.us_dollars) {
+                                    <app-price [precio]="product_selected.price + precio_piletadoble" [oferta]="product_selected.discount" [cuotas]="product_selected.installments" [porcentaje_recargo_cuotas]="product_selected.surcharge_percentage" [dolares]="product_selected.us_dollars" />
+                                }
+                                @else {
+                                    <app-price [precio]="product_selected.price + precio_piletadoble_usd" [oferta]="product_selected.discount" [cuotas]="product_selected.installments" [porcentaje_recargo_cuotas]="product_selected.surcharge_percentage" [dolares]="product_selected.us_dollars" />
+                                }
+                            }
+                        </div>
+                        <div class="cajas_precio cajas_garantias">
+                            <div class="width">
+                                <i [class]="paymentmethod_collapsed ? 'bi bi-credit-card texto_garantias' : 'bi bi-credit-card texto_garantias texto_garantias_activado'" (click)="mostrarOCollapsar('paymentmethod')"> Medios de pago</i>
+                            </div>
+                            <div class="width">
+                                <i [class]="shipping_collapsed ? 'bi bi-truck texto_garantias' : 'bi bi-truck texto_garantias texto_garantias_activado'" (click)="mostrarOCollapsar('shipping')"> Costos de envío</i>
+                            </div>
+                        </div>
+                        @if (!shipping_collapsed || !paymentmethod_collapsed) {
+                            <ul class="lista_garantias">
+                                @if (!shipping_collapsed) {
+                                    <li><i class="bi bi-check2-square"></i> Llega gratis el próximo {{ product_selected.free_shipping_day }}</li>
+                                }
+                                @if (!paymentmethod_collapsed) {
+                                    <li><i class="bi bi-check2-square"></i> Pago con tarjeta de crédito, débito o transferencia</li>                        }
+                            </ul>
+                        }
+                    </div>
+
+                    <div class="row cajas_pileta">
+                        <div class="caja_pileta">
+                            <input
+                                id="pileta_simple"
+                                type="submit"
+                                [class]="pileta_simple ? 'boton_pileta_activado' : 'boton_pileta_desactivado'"
+                                value="Pileta simple"
+                                (click)="cambiarPileta('simple')"
+                            >
+                        </div>
+                        <div class="caja_pileta">
+                            <input
+                                id="pileta_doble"
+                                type="submit"
+                                [class]="!pileta_simple ? 'boton_pileta_activado' : 'boton_pileta_desactivado'"
+                                value="Pileta doble"
+                                (click)="cambiarPileta('doble')"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="width caja_boton_comprar">
+                            <app-buy-button />
+                        </div>
+                    </div>
+
+                    <div class="row cajas_descripcion">
+                        <div class="width">
+                            <h4 class="subtitulo">DESCRIPCIÓN</h4>
+                        </div>
+                        <div class="width">
+                            <p class="texto_justificado">Mesada para cocina o baño con pileta de acero inoxidable</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h4 class="subtitulo">CARACTERÍSTICAS</h4>
+                        <div class="width caja_tabla">
+                            <table class="width features_table">
+                                <tbody>
+                                    <tr class="fila1">
+                                        <th scope="row" class="celda_tabla">Material</th>
+                                        <td class="celda_tabla"> {{ product_selected.material }} </td>
+                                    </tr>
+                                    <tr class="fila2">
+                                        <th scope="row" class="celda_tabla">Medida</th>
+                                        <td class="celda_tabla"> {{ product_selected.measures }}cm</td>
+                                    </tr>
+                                    <tr class="fila1">
+                                        <th scope="row" class="celda_tabla">Color</th>
+                                        <td class="celda_tabla"> {{ product_selected.color }} </td>
+                                    </tr>
+                                    <tr class="fila2">
+                                        <th scope="row" class="celda_tabla">Origen del granito</th>
+                                        <td class="celda_tabla">
+                                            {{ product_selected.origin }}
+                                        </td>
+                                    </tr>
+                                    <tr class="fila1">
+                                        <th scope="row" class="celda_tabla">Tipo de pileta</th>
+                                        <td class="celda_tabla">
+                                            {{ tipo_de_pileta }}
+                                        </td>
+                                    </tr>
+                                    <tr class="fila2">
+                                        <th scope="row" class="celda_tabla">Medida de pileta</th>
+                                        <td class="celda_tabla">
+                                            {{ medida_de_pileta }}cm
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @else {
+        <app-not-found [elemento_no_encontrado]="'producto'"/>
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

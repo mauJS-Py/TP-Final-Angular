@@ -1,0 +1,286 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.width {
+    flex: 0 0 auto;
+    width: 100%; 
+}
+
+
+
+
+.boton_registro {
+    width: 100%;
+    background-color: #325598;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px;
+    border: 0;
+    margin-top: 20px;
+}
+
+.boton_registro:hover, .boton_registro:active {
+    background-color: #4776ce;
+}
+
+.caja_formulario {
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.caja_registro_usuario {
+    display: flex;
+    justify-content: center;
+}
+
+.caja_register, .caja_register_mensajes_validacion {
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.caja_register_mensajes_validacion {
+    justify-content: start;
+    padding: 0 2%;
+    margin-top: 0;
+}
+
+.caja_mensaje_validacion {
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.caja_registrarse_register {
+    margin-bottom: 70%;
+}
+
+.caja_titulo {
+    margin-top: 10%;
+}
+
+.cajas_register {
+    width: 50%;
+    flex: 0 0 auto;
+    align-items: flex-start;
+}
+
+.cajas_registrarse_register {
+    width: 100%;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 15px;
+}
+
+.etiqueta_w50_pl, .etiqueta_w50_pr {
+    width: 50%;
+}
+
+.etiqueta_w50_pl {
+    padding-left: 1px;
+}
+
+.etiqueta_w50_pr {
+    padding-right: 1px;
+}
+
+.formulario_registro {
+    padding: 15px;
+}
+
+.input_password {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    margin-bottom: 10px;
+}
+
+.input_sesion, .input_sesion_password {
+    border: 2px solid #c9c9c9;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.input_sesion_password {
+    margin-bottom: 0;
+}
+
+.input_sesion:focus, .input_sesion_password:focus {
+    border-color: #325598;
+    outline-color: #325598;
+}
+
+.label_registro {
+    color: #262B4D;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.mensaje_validacion, .mensaje_validacion_ingreso_incorrecto {
+    width: 100%;
+    color: #325598;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mensaje_validacion_ingreso_incorrecto {
+    color: #f12222;
+}
+
+.p-t {
+    padding-top: 50px;    
+}
+
+.password_icon {
+    position: absolute;
+    right: 6px;
+    cursor: pointer;
+}
+
+.password_icon:hover, .password_icon:active {
+    color: #325598;
+}
+
+.registrate {
+    text-decoration: none;
+    color: #325598;
+    font-weight: 700;
+}
+
+.registro_usuarios {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.registro_usuarios_requeridos {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.subcaja_registrarse_register {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+
+.subtitulo_usuarios {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.titulos_juntos {
+    width: fit-content;
+}
+
+
+@media screen and (max-width:767px) {
+    .caja_register {
+        margin-right: 20%;
+        margin-left: 20%;
+        margin-top: 0;
+    }
+
+    .caja_register_mensajes_validacion {
+        margin-right: auto;
+        margin-left: auto;
+        width: 60%;
+    }
+
+    .caja_registrarse_register {
+        margin-bottom: 4%;
+    }
+
+    .caja_titulo {
+        margin-top: 0;
+    }
+
+    .cajas_register {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+    .cajas_registrarse_register {
+        font-size: 15px;
+        text-align: right;
+    }
+
+    .centrar_mensajes_validacion {
+        justify-content: center;
+    }
+
+    .etiqueta_w50_pl, .etiqueta_w50_pr {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .min_768 {
+        display: none;
+    }
+
+    .p-t {
+        padding-top: 75px;    
+    }
+
+    .subcaja_registrarse_register {
+        display: inherit;
+        flex-wrap: inherit;
+        justify-content: inherit;
+    }
+    
+    .titulos_juntos {
+        margin-bottom: 6%;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .caja_register {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
+    .caja_register_mensajes_validacion {
+        width: 98%;
+    }
+
+    .cajas_register {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

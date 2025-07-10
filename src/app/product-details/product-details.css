@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.boton_pileta_activado, .boton_pileta_desactivado {
+    font-weight: 500;
+    padding: 5px 10px;
+    margin: 2px;
+    width: 100%;
+    min-width: 80px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #FFFFFF;
+}
+
+.boton_pileta_activado {
+    font-weight: 600;
+    border: 3px solid #325598;
+}
+
+.boton_pileta_desactivado:hover, .boton_pileta_desactivado:active {
+    background-color: #325598;
+    border-color: #325598;
+    color: #FFFFFF;
+}
+
+.breadcrumb {
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    color: #383838;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.breadcrumb_item {
+    list-style: none;
+    display: inline-block;
+}
+
+.breadcrumb_link {
+    text-decoration: none;
+    font-weight: 700;
+    color: #383838;
+}
+
+.breadcrumb_slash {
+    padding: 0 6px;
+}
+
+.caja_boton_comprar {
+    margin-bottom: 30px;
+}
+
+.caja_img {
+    position: relative;
+}
+
+.caja_oferta {
+    font-size: 26px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.caja_pileta {
+    width: 49%;
+}
+
+.cajas_descripcion {
+    align-items: end;
+    justify-content: start;
+    margin-bottom: 25px;
+}
+
+.cajas_pileta {
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cajas_precio {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.caja_precio_pileta {
+    align-items: end;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.caja_producto {
+    margin-right: 10%;
+    margin-left: 10%;
+    justify-content: center;
+}
+
+.caja_tabla {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.cajas_producto {
+    width: 50%;
+    padding: 6px;
+    flex: 0 0 auto;
+}
+
+.cargando {
+    display: flex;
+    justify-content: center;
+    color: #325598;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.celda_tabla {
+    padding: 10px;
+}
+
+.features_table {
+
+    border-spacing: 0;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.fila1 {
+    background-color: #c9d9f8;
+}
+
+.fila2 {
+    background-color: #dde6f8;
+}
+
+.image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.lista_garantias {
+    width: 90%;
+    list-style: none;
+    font-size: 14px;
+    margin-top: 15px;
+    color: #325598;
+    font-weight: 600;
+}
+
+.oferta_mostrar {
+    width: fit-content;
+    font-size: 100%;
+    font-weight: 600;
+    background-color: #f12222;
+    padding: 2px 4px;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.p-t-100 {
+    padding-top: 100px;    
+}
+
+.sin_interes_pd {
+    font-size: 14px;
+}
+
+.subtitulo {
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.texto_garantias {
+    width: max-content;
+    font-style: normal;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.texto_garantias_activado {
+    font-weight: 700;
+}
+
+.texto_justificado {
+    text-align: justify;
+}
+
+.titulo_producto {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(1vw + 12px);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+    .caja_oferta {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .caja_oferta {
+        font-size: 23px;
+    }
+    .p-t-100 {
+        padding-top: 90px;    
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cajas_producto {
+        width: 100%;
+    }
+    .p-t-100 {
+        padding-top: 80px;    
+    }
+    .sin_interes_pd {
+        font-size: 16px;
+    }
+    .titulo_producto {
+        font-size: calc(2vw + 12px);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .breadcrumb {
+        width: 92%;
+    }
+    .sin_interes_pd {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 571px) {
+    .caja_producto {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .breadcrumb {
+        width: 98%;
+        font-size: 14px;
+    }
+    .breadcrumb_slash {
+        padding: 0 3px;
+    }
+    .caja_oferta {
+        font-size: 18px;
+    }
+    .caja_producto {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .cajas_garantias {
+        margin-top: 15px;
+    }
+    .cajas_producto {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+    .p-t-100 {
+        padding-top: 75px;    
+    }
+    .sin_interes_pd {
+        font-size: 12px;
+    }
+    .texto_garantias {
+        font-size: 14px;
+    }
+    .titulo_producto {
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.width {
+    flex: 0 0 auto;
+    width: 100%; 
+}
